@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create an ordered list of dialogues with audio URLs
     function createDialogueList() {
         if (!podcastData || !podcastData.text) {
-            console.error('无效的播客数据结构');
+            console.error('Invalid podcast data structure');
             return;
         }
         
@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize player UI and event listeners
     function initializePlayer() {
         if (!dialogues.length) {
-            console.error('无对话内容可播放');
+            console.error('No playable content available');
             return;
         }
         
@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (messageEl) {
                     const errorNote = document.createElement('div');
                     errorNote.classList.add('error-note');
-                    errorNote.textContent = '音频链接已过期，请重新生成';
+                    errorNote.textContent = 'Audio link expired, please regenerate';
                     messageEl.appendChild(errorNote);
                 }
             }
@@ -764,7 +764,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div style="text-align: center; margin-bottom: 10px;">
                 <div class="loading-spinner"></div>
             </div>
-            <div>正在生成播客内容，请稍候...</div>
+            <div>Generating podcast content, please wait...</div>
         </div>
     `;
     document.body.appendChild(loadingOverlay);
@@ -786,7 +786,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } catch (error) {
                 console.error('Failed to load podcast data:', error);
                 console.trace('Error stack trace');
-                alert('生成播客内容失败，请重试');
+                alert('Failed to generate podcast content, please try again');
             } finally {
                 // Hide loading overlay
                 loadingOverlay.style.display = 'none';
