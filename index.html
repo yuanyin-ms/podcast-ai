@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>播客播放器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>请输入文章内容</h2>
+            </div>
+            <div class="modal-body">
+                <textarea id="articleContent"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn cancel-btn" id="cancelBtn">取消</button>
+                <button class="modal-btn confirm-btn" id="confirmBtn">确认</button>
+            </div>
+        </div>
+    </div>
+    <button class="floating-edit-btn" id="floatingEditBtn"></button>
+    <div class="container">
+        <div class="controls-card">
+            <div class="transcript-container">
+                <div id="transcript"></div>
+            </div>
+            <div class="wave-animation">
+                <canvas id="waveCanvas"></canvas>
+            </div>
+        <audio id="audio-player"></audio>
+        <div class="bottom-controls">
+            <div class="progress-container">
+                <div class="time-display">
+                    <span id="current-time">00:00</span>
+                    <div class="progress-bar">
+                        <div id="progress-fill"></div>
+                    </div>
+                    <span id="total-time">00:00</span>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="prev-btn" class="control-btn icon-prev"></button>
+                <button id="play-btn" class="control-btn icon-play"></button>
+                <button id="next-btn" class="control-btn icon-next"></button>
+            </div>
+            <div class="progress-info">
+            <span id="current-index">0</span>/<span id="total-count">0</span>
+        </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
